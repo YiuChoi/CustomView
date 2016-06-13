@@ -13,16 +13,13 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * 自定义View
+ * 自定义View(1):修改TextView显示效果
  * <p>
  * Created by 蔡小木 on 2016/6/12 0012.
  */
 
 public class ExtendTextView extends TextView {
 
-    private Paint mPaint;
-    private Paint mPaint1;
-    private Paint mPaint2;
     private int mViewWidth;
     private LinearGradient mLinearGradient;
     private Matrix mMatrix;
@@ -51,9 +48,9 @@ public class ExtendTextView extends TextView {
         if (mViewWidth == 0) {
             mViewWidth = getMeasuredWidth();
             if (mViewWidth > 0) {
-                mPaint = getPaint();
+                Paint paint = getPaint();
                 mLinearGradient = new LinearGradient(0, 0, mViewWidth, 0, new int[]{Color.BLUE, 0xffffff, Color.BLUE}, null, Shader.TileMode.CLAMP);
-                mPaint.setShader(mLinearGradient);
+                paint.setShader(mLinearGradient);
                 mMatrix = new Matrix();
             }
         }
@@ -67,7 +64,7 @@ public class ExtendTextView extends TextView {
             if (mTranslate > 2 * mViewWidth) {
                 mTranslate = -mViewWidth;
             }
-            mMatrix.setTranslate(mTranslate,0);
+            mMatrix.setTranslate(mTranslate, 0);
             mLinearGradient.setLocalMatrix(mMatrix);
             postInvalidateDelayed(100);
         }
