@@ -2,6 +2,8 @@ package name.caiyao.circleview;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.view.View;
 public class CircleView extends View {
 
     private int mCircleXY;
+    private float mRadius;
+    private RectF mRectF;
 
     public CircleView(Context context) {
         super(context);
@@ -31,10 +35,19 @@ public class CircleView extends View {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    private void init(){
-        mCircleXY = getMeasuredWidth()/2;
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    private void init() {
+        mRadius = (float) (getMeasuredWidth() * 0.5 / 2);
+        mCircleXY = getMeasuredWidth() / 2;
+    }
 
-
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        mRectF = new RectF((float) (getMeasuredWidth() * 0.1), (float) (getMeasuredWidth() * 0.1), (float) (getMeasuredWidth() * 0.9), (float) (getMeasuredWidth() * 0.9));
+    }
 }
