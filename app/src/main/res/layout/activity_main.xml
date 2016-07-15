@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="name.caiyao.customview.MainActivity">
 
     <name.caiyao.extendtextview.ExtendTextView
         android:id="@+id/extendTextView"
         android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Hello World!"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintRight_toRightOf="@+id/activity_main"
-        app:layout_constraintTop_toTopOf="@+id/activity_main"/>
+        android:text="Hello World!"/>
 
     <name.caiyao.topbar.TopBar
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintTop_toBottomOf="@+id/extendTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
         app:leftBackground="@color/colorPrimary"
         app:leftText="ddsd"
         app:leftTextColor="@color/colorAccent"
@@ -38,7 +29,11 @@
         app:topBarTitleTextColor="@color/colorAccent"/>
 
     <name.caiyao.circleview.CircleView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        app:circle_color="@android:color/holo_blue_light"
+        android:layout_height="100dp"
+        android:background="#000000"/>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -2,10 +2,10 @@ package name.caiyao.circleview;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
@@ -16,26 +16,28 @@ import android.view.View;
 
 public class CircleView extends View {
 
-    private int mCircleXY;
-    private float mRadius;
-    private RectF mRectF;
-    private Paint circlePaint,mArcPaint,mTextPaint;
+    private int mColor = Color.RED;
+    private Paint circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public CircleView(Context context) {
         super(context);
+        init(context, null);
     }
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
     }
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
     }
 
     @Override
@@ -43,23 +45,26 @@ public class CircleView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    private void init() {
-        mRadius = (float) (getMeasuredWidth() * 0.5 / 2);
-        mCircleXY = getMeasuredWidth() / 2;
-        mRectF = new RectF((float) (getMeasuredWidth() * 0.1), (float) (getMeasuredWidth() * 0.1), (float) (getMeasuredWidth() * 0.9), (float) (getMeasuredWidth() * 0.9));
-        circlePaint = new Paint();
-        circlePaint.setColor(Color.YELLOW);
-        mArcPaint = new Paint();
-        mArcPaint.setColor(Color.BLUE);
-        mTextPaint = new Paint();
-        mTextPaint.setColor(Color.GREEN);
+    private void init(Context context, AttributeSet attrs) {
+        if (attrs != null) {
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView);
+            mColor = typedArray.getColor(R.styleable.CircleView_circle_color, Color.RED);
+            typedArray.recycle();
+        }
+        circlePaint.setColor(mColor);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawCircle(mCircleXY,mCircleXY,mRadius,circlePaint);
-        canvas.drawArc(mRectF,270,25,false,mArcPaint);
-        canvas.drawText("sdsd",0,4,mCircleXY,mCircleXY+(4/4),mTextPaint);
         super.onDraw(canvas);
+
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int paddingTop = getPaddingTop();
+        int paddingBottom = getPaddingBottom();
+        int width = getWidth() - paddingLeft - paddingRight;
+        int height = getHeight() - paddingTop - paddingBottom;
+        int radius = Math.min(width, height) / 2;
+        canvas.drawCircle(paddingLeft + width / 2, paddingTop + height / 2, radius, circlePaint);
     }
 }
