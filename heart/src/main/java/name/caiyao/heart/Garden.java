@@ -1,9 +1,6 @@
 package name.caiyao.heart;
 
-/**
- * Package com.example.administrator.testrecyclerview
- * Created by HuaChao on 2016/5/24.
- */
+
 public class Garden {
 
     //创建一个随机的花朵

@@ -4,10 +4,7 @@ import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
-/**
- * Package com.example.administrator.testrecyclerview
- * Created by HuaChao on 2016/5/25.
- */
+
 public class Bloom {
     private int color;//整个花朵的颜色
     private Point point;//花芯圆心

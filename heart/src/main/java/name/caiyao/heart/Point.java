@@ -1,9 +1,6 @@
 package name.caiyao.heart;
 
-/**
- * Package com.hc.testheart
- * Created by HuaChao on 2016/5/25.
- */
+
 public class Point {
 
     public int x;

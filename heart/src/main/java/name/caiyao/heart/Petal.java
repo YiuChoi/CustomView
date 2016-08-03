@@ -4,9 +4,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-/**
- * Created by 蔡小木 on 2016/8/3 0003.
- */
 
 public class Petal {
     private float stretchA;//第一个控制点延长线倍数

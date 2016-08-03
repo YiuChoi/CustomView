@@ -2,10 +2,7 @@ package name.caiyao.heart;
 
 import android.graphics.Color;
 
-/**
- * Package com.example.administrator.testrecyclerview
- * Created by HuaChao on 2016/5/25.
- */
+
 public class MyUtil {
 
     public static float circle = (float) (2 * Math.PI);

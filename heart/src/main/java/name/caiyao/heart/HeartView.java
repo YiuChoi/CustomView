@@ -11,10 +11,7 @@ import android.view.SurfaceView;
 
 import java.util.ArrayList;
 
-/**
- * Package com.hc.testheart
- * Created by HuaChao on 2016/5/25.
- */
+
 public class HeartView extends SurfaceView implements SurfaceHolder.Callback {
     SurfaceHolder surfaceHolder;
     int offsetX;
