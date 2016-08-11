@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/extendtextview" />
             <option value="$PROJECT_DIR$/heart" />
             <option value="$PROJECT_DIR$/topbar" />
+            <option value="$PROJECT_DIR$/watch" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
