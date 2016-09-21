@@ -104,7 +104,6 @@ public class WatchView extends View {
 
     //Dp转px
     private float DptoPx(int value) {
-
         return SizeUtil.Dp2Px(getContext(), value);
     }
 
@@ -125,12 +124,10 @@ public class WatchView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = 1000; //设定一个最小值
 
-
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-
 
         if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.UNSPECIFIED || heightMeasureSpec == MeasureSpec.AT_MOST || heightMeasureSpec == MeasureSpec.UNSPECIFIED) {
             try {
@@ -181,7 +178,6 @@ public class WatchView extends View {
 
     private void paintPointer(Canvas canvas) {
         Calendar calendar = Calendar.getInstance();
-
         int hour = calendar.get(Calendar.HOUR_OF_DAY); //时
         int minute = calendar.get(Calendar.MINUTE); //分
         int second = calendar.get(Calendar.SECOND); //秒
@@ -196,6 +192,7 @@ public class WatchView extends View {
         mPaint.setStrokeWidth(5);
         mPaint.setTextAlign(Paint.Align.CENTER);
         canvas.drawText(simpleDateFormat.format(new Date()), 0, getHeight() / 4, mPaint);
+        mPaint.setTextAlign(Paint.Align.LEFT);
         canvas.restore();
         //绘制时针
         canvas.save();
