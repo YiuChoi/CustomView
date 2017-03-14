@@ -1,1 +1,1 @@
-include ':app', ':extendtextview', ':topbar', ':circleview', ':heart', ':watch'
+include ':app', ':extendtextview', ':topbar', ':circleview', ':heart', ':watch', ':switch'
