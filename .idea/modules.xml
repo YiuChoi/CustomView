@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/circleview/circleview.iml" filepath="$PROJECT_DIR$/circleview/circleview.iml" />
       <module fileurl="file://$PROJECT_DIR$/extendtextview/extendtextview.iml" filepath="$PROJECT_DIR$/extendtextview/extendtextview.iml" />
       <module fileurl="file://$PROJECT_DIR$/heart/heart.iml" filepath="$PROJECT_DIR$/heart/heart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidemenu/slidemenu.iml" filepath="$PROJECT_DIR$/slidemenu/slidemenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/switch/switch.iml" filepath="$PROJECT_DIR$/switch/switch.iml" />
       <module fileurl="file://$PROJECT_DIR$/topbar/topbar.iml" filepath="$PROJECT_DIR$/topbar/topbar.iml" />
       <module fileurl="file://$PROJECT_DIR$/watch/watch.iml" filepath="$PROJECT_DIR$/watch/watch.iml" />
