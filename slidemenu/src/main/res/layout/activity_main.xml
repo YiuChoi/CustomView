@@ -7,7 +7,7 @@
     android:background="@drawable/img_frame_background"
     tools:context="name.caiyao.slidemenu.MainActivity">
 
-    <name.caiyao.slidemenu.view.SlidingMenu
+    <name.caiyao.slidemenu.view.CustomSlidingMenu
         android:id="@+id/sm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,18 +19,20 @@
             android:orientation="horizontal">
 
             <include layout="@layout/left_menu" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/qq">
-                <Button
-                    android:onClick="toggleMenu"
-                    android:layout_width="wrap_content"
-                    android:text="switchMenu"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
         </LinearLayout>
-    </name.caiyao.slidemenu.view.SlidingMenu>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/qq">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toggleMenu"
+                android:text="switchMenu" />
+        </LinearLayout>
+
+    </name.caiyao.slidemenu.view.CustomSlidingMenu>
 
 </RelativeLayout>

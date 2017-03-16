@@ -66,8 +66,6 @@ public class SlidingMenu extends HorizontalScrollView {
                     break;
             }
         }
-
-
         array.recycle();
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();

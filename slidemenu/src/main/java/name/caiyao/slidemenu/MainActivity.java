@@ -1,23 +1,22 @@
 package name.caiyao.slidemenu;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 
-import name.caiyao.slidemenu.view.SlidingMenu;
+import name.caiyao.slidemenu.view.CustomSlidingMenu;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SlidingMenu mLeftMenu;
+    private CustomSlidingMenu mLeftMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLeftMenu = (SlidingMenu) findViewById(R.id.sm);
+        mLeftMenu = (CustomSlidingMenu) findViewById(R.id.sm);
     }
 
-    public void toggleMenu(View view) {
-        mLeftMenu.toggle();
-    }
+//    public void toggleMenu(View view) {
+//        mLeftMenu.toggle();
+//    }
 }
